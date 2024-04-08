@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */; };
+		364604D02BC3DC3B00A3E971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604CF2BC3DC3B00A3E971 /* Assets.xcassets */; };
+		364604D32BC3DC3B00A3E971 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604D22BC3DC3B00A3E971 /* Preview Assets.xcassets */; };
+		364604F62BC3DCC400A3E971 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364604F52BC3DCC400A3E971 /* FontProvider.swift */; };
+		3646050C2BC3DF1200A3E971 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604F82BC3DF1200A3E971 /* Lato-Regular.ttf */; };
+		3646050D2BC3DF1200A3E971 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604F92BC3DF1200A3E971 /* Lato-HairlineItalic.ttf */; };
+		3646050E2BC3DF1200A3E971 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604FA2BC3DF1200A3E971 /* Lato-Light.ttf */; };
+		3646050F2BC3DF1200A3E971 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604FB2BC3DF1200A3E971 /* Lato-BoldItalic.ttf */; };
+		364605102BC3DF1200A3E971 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604FC2BC3DF1200A3E971 /* Lato-HeavyItalic.ttf */; };
+		364605112BC3DF1200A3E971 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604FD2BC3DF1200A3E971 /* Lato-MediumItalic.ttf */; };
+		364605122BC3DF1200A3E971 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604FE2BC3DF1200A3E971 /* Lato-Heavy.ttf */; };
+		364605132BC3DF1200A3E971 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364604FF2BC3DF1200A3E971 /* Lato-Black.ttf */; };
+		364605142BC3DF1200A3E971 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 364605002BC3DF1200A3E971 /* OFL.txt */; };
+		364605152BC3DF1200A3E971 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605012BC3DF1200A3E971 /* Lato-Bold.ttf */; };
+		364605162BC3DF1200A3E971 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605022BC3DF1200A3E971 /* Lato-ThinItalic.ttf */; };
+		364605172BC3DF1200A3E971 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605032BC3DF1200A3E971 /* Lato-BlackItalic.ttf */; };
+		364605182BC3DF1200A3E971 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605042BC3DF1200A3E971 /* Lato-Medium.ttf */; };
+		364605192BC3DF1200A3E971 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605052BC3DF1200A3E971 /* Lato-Semibold.ttf */; };
+		3646051A2BC3DF1200A3E971 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605062BC3DF1200A3E971 /* Lato-Italic.ttf */; };
+		3646051B2BC3DF1200A3E971 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605072BC3DF1200A3E971 /* Lato-Thin.ttf */; };
+		3646051C2BC3DF1200A3E971 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605082BC3DF1200A3E971 /* Lato-LightItalic.ttf */; };
+		3646051D2BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605092BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf */; };
+		3646051E2BC3DF1200A3E971 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3646050A2BC3DF1200A3E971 /* Lato-Hairline.ttf */; };
+		3646051F2BC3DF1200A3E971 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3646050B2BC3DF1200A3E971 /* README.txt */; };
+		364605212BC3E1DE00A3E971 /* SingletonObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605202BC3E1DE00A3E971 /* SingletonObj.swift */; };
+		364605232BC3E48B00A3E971 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605222BC3E48B00A3E971 /* UserView.swift */; };
+		364605252BC3E55E00A3E971 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605242BC3E55E00A3E971 /* UserModel.swift */; };
+		364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605262BC3E73900A3E971 /* ScheduleView.swift */; };
+		364605292BC3E76700A3E971 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605282BC3E76700A3E971 /* View+.swift */; };
+		3646052B2BC3E77F00A3E971 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646052A2BC3E77F00A3E971 /* Color+.swift */; };
+		3646052D2BC3E7B900A3E971 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646052C2BC3E7B900A3E971 /* Constants.swift */; };
+		364605302BC3E81B00A3E971 /* HourLabelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646052F2BC3E81B00A3E971 /* HourLabelItemView.swift */; };
+		364605322BC3ED0200A3E971 /* DateGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605312BC3ED0200A3E971 /* DateGridItemView.swift */; };
+		364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605332BC3EE2000A3E971 /* ScheduleTableContentView.swift */; };
+		364605362BC3F71500A3E971 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605352BC3F71500A3E971 /* CommonButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		364604C82BC3DC3A00A3E971 /* FQADragDrogTableAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FQADragDrogTableAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FQADragDrogTableAnimationApp.swift; sourceTree = "<group>"; };
+		364604CF2BC3DC3B00A3E971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		364604D22BC3DC3B00A3E971 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		364604F52BC3DCC400A3E971 /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		364604F72BC3DCF000A3E971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		364604F82BC3DF1200A3E971 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		364604F92BC3DF1200A3E971 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		364604FA2BC3DF1200A3E971 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		364604FB2BC3DF1200A3E971 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		364604FC2BC3DF1200A3E971 /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		364604FD2BC3DF1200A3E971 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		364604FE2BC3DF1200A3E971 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		364604FF2BC3DF1200A3E971 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		364605002BC3DF1200A3E971 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		364605012BC3DF1200A3E971 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		364605022BC3DF1200A3E971 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		364605032BC3DF1200A3E971 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		364605042BC3DF1200A3E971 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		364605052BC3DF1200A3E971 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		364605062BC3DF1200A3E971 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		364605072BC3DF1200A3E971 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		364605082BC3DF1200A3E971 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		364605092BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		3646050A2BC3DF1200A3E971 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		3646050B2BC3DF1200A3E971 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		364605202BC3E1DE00A3E971 /* SingletonObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonObj.swift; sourceTree = "<group>"; };
+		364605222BC3E48B00A3E971 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		364605242BC3E55E00A3E971 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		364605262BC3E73900A3E971 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		364605282BC3E76700A3E971 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		3646052A2BC3E77F00A3E971 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		3646052C2BC3E7B900A3E971 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3646052F2BC3E81B00A3E971 /* HourLabelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourLabelItemView.swift; sourceTree = "<group>"; };
+		364605312BC3ED0200A3E971 /* DateGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGridItemView.swift; sourceTree = "<group>"; };
+		364605332BC3EE2000A3E971 /* ScheduleTableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableContentView.swift; sourceTree = "<group>"; };
+		364605352BC3F71500A3E971 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		364604C52BC3DC3A00A3E971 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		364604BF2BC3DC3A00A3E971 = {
+			isa = PBXGroup;
+			children = (
+				364604CA2BC3DC3A00A3E971 /* FQADragDrogTableAnimation */,
+				364604C92BC3DC3A00A3E971 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		364604C92BC3DC3A00A3E971 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				364604C82BC3DC3A00A3E971 /* FQADragDrogTableAnimation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		364604CA2BC3DC3A00A3E971 /* FQADragDrogTableAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				364604F72BC3DCF000A3E971 /* Info.plist */,
+				3646052C2BC3E7B900A3E971 /* Constants.swift */,
+				364604F42BC3DCA400A3E971 /* Utils */,
+				364604F32BC3DC9400A3E971 /* View */,
+				364604F22BC3DC8E00A3E971 /* ViewModel */,
+				364604F12BC3DC8A00A3E971 /* Model */,
+				364604D92BC3DC6A00A3E971 /* Resourse */,
+				364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */,
+				364604CF2BC3DC3B00A3E971 /* Assets.xcassets */,
+				364604D12BC3DC3B00A3E971 /* Preview Content */,
+			);
+			path = FQADragDrogTableAnimation;
+			sourceTree = "<group>";
+		};
+		364604D12BC3DC3B00A3E971 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				364604D22BC3DC3B00A3E971 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		364604D92BC3DC6A00A3E971 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				364604DA2BC3DC7400A3E971 /* Lato */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		364604DA2BC3DC7400A3E971 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				364604FF2BC3DF1200A3E971 /* Lato-Black.ttf */,
+				364605032BC3DF1200A3E971 /* Lato-BlackItalic.ttf */,
+				364605012BC3DF1200A3E971 /* Lato-Bold.ttf */,
+				364604FB2BC3DF1200A3E971 /* Lato-BoldItalic.ttf */,
+				3646050A2BC3DF1200A3E971 /* Lato-Hairline.ttf */,
+				364604F92BC3DF1200A3E971 /* Lato-HairlineItalic.ttf */,
+				364604FE2BC3DF1200A3E971 /* Lato-Heavy.ttf */,
+				364604FC2BC3DF1200A3E971 /* Lato-HeavyItalic.ttf */,
+				364605062BC3DF1200A3E971 /* Lato-Italic.ttf */,
+				364604FA2BC3DF1200A3E971 /* Lato-Light.ttf */,
+				364605082BC3DF1200A3E971 /* Lato-LightItalic.ttf */,
+				364605042BC3DF1200A3E971 /* Lato-Medium.ttf */,
+				364604FD2BC3DF1200A3E971 /* Lato-MediumItalic.ttf */,
+				364604F82BC3DF1200A3E971 /* Lato-Regular.ttf */,
+				364605052BC3DF1200A3E971 /* Lato-Semibold.ttf */,
+				364605092BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf */,
+				364605072BC3DF1200A3E971 /* Lato-Thin.ttf */,
+				364605022BC3DF1200A3E971 /* Lato-ThinItalic.ttf */,
+				364605002BC3DF1200A3E971 /* OFL.txt */,
+				3646050B2BC3DF1200A3E971 /* README.txt */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		364604F12BC3DC8A00A3E971 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				364605242BC3E55E00A3E971 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		364604F22BC3DC8E00A3E971 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		364604F32BC3DC9400A3E971 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3646052E2BC3E7EA00A3E971 /* CustomView */,
+				364605262BC3E73900A3E971 /* ScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		364604F42BC3DCA400A3E971 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				364605202BC3E1DE00A3E971 /* SingletonObj.swift */,
+				364604F52BC3DCC400A3E971 /* FontProvider.swift */,
+				364605282BC3E76700A3E971 /* View+.swift */,
+				3646052A2BC3E77F00A3E971 /* Color+.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3646052E2BC3E7EA00A3E971 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				364605222BC3E48B00A3E971 /* UserView.swift */,
+				3646052F2BC3E81B00A3E971 /* HourLabelItemView.swift */,
+				364605312BC3ED0200A3E971 /* DateGridItemView.swift */,
+				364605332BC3EE2000A3E971 /* ScheduleTableContentView.swift */,
+				364605352BC3F71500A3E971 /* CommonButton.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		364604C72BC3DC3A00A3E971 /* FQADragDrogTableAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 364604D62BC3DC3B00A3E971 /* Build configuration list for PBXNativeTarget "FQADragDrogTableAnimation" */;
+			buildPhases = (
+				364604C42BC3DC3A00A3E971 /* Sources */,
+				364604C52BC3DC3A00A3E971 /* Frameworks */,
+				364604C62BC3DC3A00A3E971 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FQADragDrogTableAnimation;
+			productName = FQADragDrogTableAnimation;
+			productReference = 364604C82BC3DC3A00A3E971 /* FQADragDrogTableAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		364604C02BC3DC3A00A3E971 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					364604C72BC3DC3A00A3E971 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 364604C32BC3DC3A00A3E971 /* Build configuration list for PBXProject "FQADragDrogTableAnimation" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 364604BF2BC3DC3A00A3E971;
+			productRefGroup = 364604C92BC3DC3A00A3E971 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				364604C72BC3DC3A00A3E971 /* FQADragDrogTableAnimation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		364604C62BC3DC3A00A3E971 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3646050E2BC3DF1200A3E971 /* Lato-Light.ttf in Resources */,
+				3646051B2BC3DF1200A3E971 /* Lato-Thin.ttf in Resources */,
+				3646051F2BC3DF1200A3E971 /* README.txt in Resources */,
+				3646051A2BC3DF1200A3E971 /* Lato-Italic.ttf in Resources */,
+				364605142BC3DF1200A3E971 /* OFL.txt in Resources */,
+				364605172BC3DF1200A3E971 /* Lato-BlackItalic.ttf in Resources */,
+				3646051D2BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf in Resources */,
+				364604D32BC3DC3B00A3E971 /* Preview Assets.xcassets in Resources */,
+				3646050C2BC3DF1200A3E971 /* Lato-Regular.ttf in Resources */,
+				3646051E2BC3DF1200A3E971 /* Lato-Hairline.ttf in Resources */,
+				3646050F2BC3DF1200A3E971 /* Lato-BoldItalic.ttf in Resources */,
+				3646050D2BC3DF1200A3E971 /* Lato-HairlineItalic.ttf in Resources */,
+				364605112BC3DF1200A3E971 /* Lato-MediumItalic.ttf in Resources */,
+				364605152BC3DF1200A3E971 /* Lato-Bold.ttf in Resources */,
+				364605192BC3DF1200A3E971 /* Lato-Semibold.ttf in Resources */,
+				364605122BC3DF1200A3E971 /* Lato-Heavy.ttf in Resources */,
+				364605182BC3DF1200A3E971 /* Lato-Medium.ttf in Resources */,
+				364605102BC3DF1200A3E971 /* Lato-HeavyItalic.ttf in Resources */,
+				3646051C2BC3DF1200A3E971 /* Lato-LightItalic.ttf in Resources */,
+				364605132BC3DF1200A3E971 /* Lato-Black.ttf in Resources */,
+				364605162BC3DF1200A3E971 /* Lato-ThinItalic.ttf in Resources */,
+				364604D02BC3DC3B00A3E971 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		364604C42BC3DC3A00A3E971 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				364605292BC3E76700A3E971 /* View+.swift in Sources */,
+				3646052B2BC3E77F00A3E971 /* Color+.swift in Sources */,
+				364604F62BC3DCC400A3E971 /* FontProvider.swift in Sources */,
+				364605232BC3E48B00A3E971 /* UserView.swift in Sources */,
+				364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */,
+				3646052D2BC3E7B900A3E971 /* Constants.swift in Sources */,
+				364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */,
+				364605302BC3E81B00A3E971 /* HourLabelItemView.swift in Sources */,
+				364605322BC3ED0200A3E971 /* DateGridItemView.swift in Sources */,
+				364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */,
+				364605252BC3E55E00A3E971 /* UserModel.swift in Sources */,
+				364605362BC3F71500A3E971 /* CommonButton.swift in Sources */,
+				364605212BC3E1DE00A3E971 /* SingletonObj.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		364604D42BC3DC3B00A3E971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		364604D52BC3DC3B00A3E971 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		364604D72BC3DC3B00A3E971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FQADragDrogTableAnimation/Preview Content\"";
+				DEVELOPMENT_TEAM = TS5LABMG92;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FQADragDrogTableAnimation/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyhdq.FQADragDrogTableAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		364604D82BC3DC3B00A3E971 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FQADragDrogTableAnimation/Preview Content\"";
+				DEVELOPMENT_TEAM = TS5LABMG92;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FQADragDrogTableAnimation/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huyhdq.FQADragDrogTableAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		364604C32BC3DC3A00A3E971 /* Build configuration list for PBXProject "FQADragDrogTableAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364604D42BC3DC3B00A3E971 /* Debug */,
+				364604D52BC3DC3B00A3E971 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		364604D62BC3DC3B00A3E971 /* Build configuration list for PBXNativeTarget "FQADragDrogTableAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364604D72BC3DC3B00A3E971 /* Debug */,
+				364604D82BC3DC3B00A3E971 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 364604C02BC3DC3A00A3E971 /* Project object */;
+}
