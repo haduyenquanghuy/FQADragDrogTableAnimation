@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DateGridItemView: View {
+struct ScheduleGridItemView: View {
     
     var column: Int
     var onSelectedCol: (Int) -> Void
@@ -18,12 +18,15 @@ struct DateGridItemView: View {
             .frame(height: AppConstant.rowGridHeight)
             .border(width: 1, edges: [.trailing], color: Color(hex: "DEDEDE"))
             .onTapGesture {
+               // add empty guesture to prevent longTapGesture block scrollView swipe
+            }
+            .onLongPressGesture(minimumDuration: 0.5) {
                 onSelectedCol(column)
             }
     }
 }
 
-struct DateGridRow: View {
+struct ScheduleGridRow: View {
     
     var row: Int
     var onSelected: (_ row: Int,_ column: Int) -> Void
@@ -31,7 +34,7 @@ struct DateGridRow: View {
     var body: some View {
         HStack(spacing: 0) {
             ForEach(0 ..< mockListUsers.count, id: \.self) {
-                DateGridItemView(column: $0, onSelectedCol: { column in
+                ScheduleGridItemView(column: $0, onSelectedCol: { column in
                     onSelected(row, column)
                 })
             }
@@ -40,7 +43,7 @@ struct DateGridRow: View {
     }
 }
 
-struct DateRow: View {
+struct ScheduleRow: View {
     
     var index: Int
     @Binding var selectedPositions: [SchedulePositionModel]
@@ -48,7 +51,7 @@ struct DateRow: View {
     var body: some View {
         VStack(spacing: 0) {
             ForEach(0 ..< AppConstant.blockPerHour, id: \.self) {
-                DateGridRow(row: $0, onSelected: { row, column in
+                ScheduleGridRow(row: $0, onSelected: { row, column in
                     
                     let newPosition = SchedulePositionModel(index: index, row: row, column: column)
                     
@@ -64,6 +67,6 @@ struct DateRow: View {
 }
 
 #Preview {
-    DateRow(index: 4, selectedPositions: .constant([]))
+    ScheduleRow(index: 4, selectedPositions: .constant([]))
 }
 

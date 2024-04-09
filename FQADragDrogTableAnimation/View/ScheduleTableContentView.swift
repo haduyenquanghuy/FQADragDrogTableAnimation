@@ -39,7 +39,7 @@ struct ScheduleTableContentView: View {
                 
                 LazyVStack(spacing: 0, content: {
                     ForEach(0...23, id: \.self) {
-                        DateRow(index: $0, selectedPositions: $selectedPostions)
+                        ScheduleRow(index: $0, selectedPositions: $selectedPostions)
                     }
                 })
                 .overlay(alignment: .topLeading) {
