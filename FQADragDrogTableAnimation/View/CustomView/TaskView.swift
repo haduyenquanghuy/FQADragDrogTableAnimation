@@ -17,7 +17,7 @@ struct TaskView: View {
             .cornerRadius(8)
             .scaleEffect(scale)
             .onAppear {
-                withAnimation(.bouncy(duration: 0.36, extraBounce: 0.32)) {
+                withAnimation(.snappy(duration: 0.36, extraBounce: 0.36)) {
                     scale = 1
                 }
             }
