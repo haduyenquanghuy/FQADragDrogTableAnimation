@@ -20,7 +20,7 @@ struct ScheduleGridItemView: View {
             .onTapGesture {
                // add empty guesture to prevent longTapGesture block scrollView swipe
             }
-            .onLongPressGesture(minimumDuration: 0.5) {
+            .onLongPressGesture(minimumDuration: 0.1) {
                 onSelectedCol(column)
             }
     }
@@ -55,10 +55,9 @@ struct ScheduleRow: View {
                     
                     let newPosition = SchedulePositionModel(index: index, row: row, column: column)
                     
-                    withAnimation(.linear(duration: 0.5)) {
+                    withAnimation(.linear(duration: 0.36)) {
                         selectedPositions.append(newPosition)
                     }
-                    
                 })
             }
         }
