@@ -44,6 +44,7 @@
 		364605362BC3F71500A3E971 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605352BC3F71500A3E971 /* CommonButton.swift */; };
 		36D5D8692BC4E1C900524F07 /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5D8682BC4E1C900524F07 /* CustomTransition.swift */; };
 		36D5D86B2BC4F05700524F07 /* SchedulePositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5D86A2BC4F05700524F07 /* SchedulePositionModel.swift */; };
+		36D5D86D2BC4FA0F00524F07 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5D86C2BC4FA0F00524F07 /* TaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		364605352BC3F71500A3E971 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
 		36D5D8682BC4E1C900524F07 /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 		36D5D86A2BC4F05700524F07 /* SchedulePositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePositionModel.swift; sourceTree = "<group>"; };
+		36D5D86C2BC4FA0F00524F07 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				3646052F2BC3E81B00A3E971 /* HourLabelItemView.swift */,
 				364605312BC3ED0200A3E971 /* DateGridItemView.swift */,
 				364605352BC3F71500A3E971 /* CommonButton.swift */,
+				36D5D86C2BC4FA0F00524F07 /* TaskView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				364604F62BC3DCC400A3E971 /* FontProvider.swift in Sources */,
 				364605232BC3E48B00A3E971 /* UserView.swift in Sources */,
 				364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */,
+				36D5D86D2BC4FA0F00524F07 /* TaskView.swift in Sources */,
 				3646052D2BC3E7B900A3E971 /* Constants.swift in Sources */,
 				364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */,
 				364605302BC3E81B00A3E971 /* HourLabelItemView.swift in Sources */,

@@ -87,11 +87,8 @@ struct ScheduleTableContentView: View {
                 }
                 .overlay(alignment: .topLeading) {
                     ForEach(selectedPostions) { pos in
-                        Color.red
-                            .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
-                            .cornerRadius(8)
+                        TaskView()
                             .offset(x: CGFloat(pos.column) * AppConstant.rowWidth, y: CGFloat(pos.index) * AppConstant.rowHeight)
-                            .transition(.scale)
                     }
                 }
             }
@@ -121,4 +118,3 @@ struct ScheduleTableContentView: View {
             }
     }
 }
-
