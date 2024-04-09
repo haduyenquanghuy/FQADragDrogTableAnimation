@@ -18,7 +18,8 @@ let mockListUsers = [
 
 struct AppConstant {
     
+    static let blockPerHour: Int = 4
     static let rowWidth = (UIScreen.main.bounds.width - 36) / 3
-    static let rowHeight: CGFloat = rowGridHeight * 4
+    static let rowHeight: CGFloat = rowGridHeight * CGFloat(blockPerHour)
     static let rowGridHeight: CGFloat = 30    
 }

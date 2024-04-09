@@ -14,8 +14,9 @@ struct ScheduleTableContentView: View {
     @Binding var isEditWithAnimation: Bool
     @Binding var blockScrollWhenDragTask: Bool
     @Binding var shadowHeight: Double
-    @Binding  var oldTranslation: CGSize
-    @Binding  var lastTranslation: CGSize
+    @Binding var oldTranslation: CGSize
+    @Binding var lastTranslation: CGSize
+    @Binding var selectedPostions: [SchedulePositionModel]
     
     @State private var translation = CGSize.zero
     
@@ -37,8 +38,8 @@ struct ScheduleTableContentView: View {
                     .zIndex(1)
                 
                 LazyVStack(spacing: 0, content: {
-                    ForEach(0...23, id: \.self) { _ in
-                        DateRow()
+                    ForEach(0...23, id: \.self) {
+                        DateRow(index: $0, selectedPositions: $selectedPostions)
                     }
                 })
                 .overlay(alignment: .topLeading) {
@@ -82,6 +83,15 @@ struct ScheduleTableContentView: View {
                                     isEditWithAnimation = true
                                 }
                             }
+                    }
+                }
+                .overlay(alignment: .topLeading) {
+                    ForEach(selectedPostions) { pos in
+                        Color.red
+                            .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
+                            .cornerRadius(8)
+                            .offset(x: CGFloat(pos.column) * AppConstant.rowWidth, y: CGFloat(pos.index) * AppConstant.rowHeight)
+                            .transition(.scale)
                     }
                 }
             }

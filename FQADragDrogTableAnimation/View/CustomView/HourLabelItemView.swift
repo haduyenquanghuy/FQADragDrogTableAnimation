@@ -16,7 +16,7 @@ struct HourLabelItemView: View {
             .font(fontProvider.latoFont(size: 14, fontWeight: .bold))
             .bold()
             .fixedSize(horizontal: true, vertical: true)
-            .frame(height: AppConstant.rowGridHeight * 4, alignment: .top)
+            .frame(height: AppConstant.rowGridHeight * CGFloat(AppConstant.blockPerHour), alignment: .top)
             .frame(maxWidth: .infinity)
     }
 }

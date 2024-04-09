@@ -21,6 +21,8 @@ struct ScheduleView: View {
     @State private var oldTranslation = CGSize.zero
     @State private var lastTranslation = CGSize.zero
     
+    @State private var selectedPositions: [SchedulePositionModel] = []
+    
     var body: some View {
         ScrollView([.vertical], showsIndicators: false) {
             ScrollView([.horizontal], showsIndicators: false) {
@@ -30,7 +32,8 @@ struct ScheduleView: View {
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                          shadowHeight: $shadowHeight,
                                          oldTranslation: $oldTranslation,
-                                         lastTranslation: $lastTranslation)
+                                         lastTranslation: $lastTranslation, 
+                                         selectedPostions: $selectedPositions)
                     .background( GeometryReader { geo in
                         Color.clear
                             .preference(key: ViewOffsetKey.self, 
