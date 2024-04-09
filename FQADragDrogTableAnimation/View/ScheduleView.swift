@@ -10,8 +10,11 @@ import SwiftUI
 struct ScheduleView: View {
     
     @State private var offset = CGPoint.zero
+    
+    // This too variable need to sync
     @State private var isEdit = false
     @State private var isEditWithAnimation = false
+    
     @State private var blockScrollWhenDragTask = false
     @State private var shadowHeight: Double = 0
     
@@ -65,7 +68,7 @@ struct ScheduleView: View {
                             isEdit = false
                         })
                         
-                        withAnimation(.easeOut(duration: 0.3)) {
+                        withAnimation(.linear(duration: 0.4)) {
                             isEditWithAnimation = false
                         }
                     }
@@ -80,14 +83,14 @@ struct ScheduleView: View {
                             isEdit = false
                         })
                         
-                        withAnimation(.easeIn(duration: 0.2)) {
+                        withAnimation(.linear(duration: 0.3)) {
                             isEditWithAnimation = false
                         }
                     }
                     
                     Spacer()
                 }
-                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .transition(.asymmetric(insertion: .fly, removal: .scale.combined(with: .opacity)))
                 
             } else {
                 EmptyView()

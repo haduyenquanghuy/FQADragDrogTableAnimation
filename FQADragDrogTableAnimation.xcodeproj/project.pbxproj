@@ -42,6 +42,7 @@
 		364605322BC3ED0200A3E971 /* DateGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605312BC3ED0200A3E971 /* DateGridItemView.swift */; };
 		364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605332BC3EE2000A3E971 /* ScheduleTableContentView.swift */; };
 		364605362BC3F71500A3E971 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605352BC3F71500A3E971 /* CommonButton.swift */; };
+		36D5D8692BC4E1C900524F07 /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D5D8682BC4E1C900524F07 /* CustomTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		364605312BC3ED0200A3E971 /* DateGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGridItemView.swift; sourceTree = "<group>"; };
 		364605332BC3EE2000A3E971 /* ScheduleTableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableContentView.swift; sourceTree = "<group>"; };
 		364605352BC3F71500A3E971 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		36D5D8682BC4E1C900524F07 /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				364604F72BC3DCF000A3E971 /* Info.plist */,
 				3646052C2BC3E7B900A3E971 /* Constants.swift */,
+				36D5D8672BC4E1AD00524F07 /* Animation */,
 				364604F42BC3DCA400A3E971 /* Utils */,
 				364604F32BC3DC9400A3E971 /* View */,
 				364604F22BC3DC8E00A3E971 /* ViewModel */,
@@ -218,6 +221,14 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		36D5D8672BC4E1AD00524F07 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				36D5D8682BC4E1C900524F07 /* CustomTransition.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				364605292BC3E76700A3E971 /* View+.swift in Sources */,
+				36D5D8692BC4E1C900524F07 /* CustomTransition.swift in Sources */,
 				3646052B2BC3E77F00A3E971 /* Color+.swift in Sources */,
 				364604F62BC3DCC400A3E971 /* FontProvider.swift in Sources */,
 				364605232BC3E48B00A3E971 /* UserView.swift in Sources */,
