@@ -11,7 +11,7 @@ struct ScheduleView: View {
     
     @State private var offset = CGPoint.zero
     
-    // This too variable need to sync
+    // This 2 variable need to sync
     @State private var isEdit = false
     @State private var isEditWithAnimation = false
     
@@ -79,6 +79,7 @@ struct ScheduleView: View {
                             shadowHeight = 0
                         }
                         
+                        // wait for shadow animation end by 0.2s delay
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                             isEdit = false
                         })
