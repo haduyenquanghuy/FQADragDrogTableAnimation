@@ -11,6 +11,7 @@ struct ScheduleView: View {
     
     @State private var offset = CGPoint.zero
     @State private var isEdit = false
+    @State private var isEditWithAnimation = false
     @State private var blockScrollWhenDragTask = false
     @State private var shadowHeight: Double = 0
     
@@ -21,7 +22,8 @@ struct ScheduleView: View {
         ScrollView([.vertical], showsIndicators: false) {
             ScrollView([.horizontal], showsIndicators: false) {
                 ScheduleTableContentView(offset: $offset, 
-                                         isEdit: $isEdit,
+                                         isEdit: $isEdit, 
+                                         isEditWithAnimation: $isEditWithAnimation,
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                          shadowHeight: $shadowHeight,
                                          oldTranslation: $oldTranslation,
@@ -39,7 +41,7 @@ struct ScheduleView: View {
         }
         .scrollDisabled(blockScrollWhenDragTask)
         .overlay(alignment: .bottom, content: {
-            if isEdit {
+            if isEditWithAnimation {
                 
                 HStack(spacing: 12) {
                     
@@ -47,21 +49,25 @@ struct ScheduleView: View {
                     
                     CommonButton(title: "Huỷ bỏ", backgroundColor: .white, foregroundColor: .black, strokeColor: .black) {
                         
-                        
                         withAnimation(.smooth(duration: 0.5)) {
                             lastTranslation = oldTranslation
                         }
                         
+                        // wait for move task to last translation end (0.5s)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                             withAnimation(.smooth(duration: 0.2)) {
                                 shadowHeight = 0
                             }
                         })
                         
-                        
+                        //wait for shadow animation by delay 0.7s = 0.5(move task to last translation) + 0.2 (shadow animation)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
                             isEdit = false
                         })
+                        
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            isEditWithAnimation = false
+                        }
                     }
                     
                     
@@ -69,13 +75,20 @@ struct ScheduleView: View {
                         withAnimation(.smooth(duration: 0.2)) {
                             shadowHeight = 0
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                             isEdit = false
                         })
+                        
+                        withAnimation(.easeIn(duration: 0.2)) {
+                            isEditWithAnimation = false
+                        }
                     }
                     
                     Spacer()
                 }
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                
             } else {
                 EmptyView()
             }

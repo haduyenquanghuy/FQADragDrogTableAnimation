@@ -11,6 +11,7 @@ struct ScheduleTableContentView: View {
     
     @Binding var offset: CGPoint
     @Binding var isEdit: Bool
+    @Binding var isEditWithAnimation: Bool
     @Binding var blockScrollWhenDragTask: Bool
     @Binding var shadowHeight: Double
     @Binding  var oldTranslation: CGSize
@@ -77,6 +78,9 @@ struct ScheduleTableContentView: View {
                             }
                             .onTapGesture {
                                 isEdit = true
+                                withAnimation(.linear(duration: 0.25)) {
+                                    isEditWithAnimation = true
+                                }
                             }
                     }
                 }
