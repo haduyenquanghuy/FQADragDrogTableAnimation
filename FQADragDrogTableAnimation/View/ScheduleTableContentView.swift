@@ -11,7 +11,6 @@ struct ScheduleTableContentView: View {
     
     @Binding var offset: CGPoint
     @Binding var isEdit: Bool
-    @Binding var isEditWithAnimation: Bool
     @Binding var blockScrollWhenDragTask: Bool
     @Binding var config: TaskConfigModel
     @Binding var selectedPostions: [SchedulePositionModel]
@@ -41,51 +40,11 @@ struct ScheduleTableContentView: View {
                     }
                 })
                 .overlay(alignment: .topLeading) {
-                    if isEdit {
-                        Color.blue
-                            .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
-                            .cornerRadius(8)
-                            .shadow(color: .black.opacity(0.25), radius: 4, x: -config.shadowHeight, y: config.shadowHeight)
-                            .offset(x: config.shadowHeight / 4 , y: -config.shadowHeight / 4)
-                            .onAppear {
-                                config.oldTranslation = config.lastTranslation
-                                withAnimation(.smooth(duration: 0.25)) {
-                                    config.shadowHeight = 8
-                                }
-                            }
-                            .offset(
-                                x: config.lastTranslation.width + translation.width,
-                                y: config.lastTranslation.height + translation.height
-                            )
-                            .gesture(
-                                dragGesture
-                            )
-                            .onLongPressGesture(minimumDuration: 0.0, perform: {
-                                // add this LongPressGesture to detect first enter to dragGesture to disable scrollView swipe
-                                blockScrollWhenDragTask = true
-                            })
-                    } else {
-                        Color.blue
-                            .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
-                            .cornerRadius(8)
-                            .offset(
-                                x: config.lastTranslation.width + translation.width,
-                                y: config.lastTranslation.height + translation.height
-                            )
-                            .onAppear {
-                                config.shadowHeight = 0
-                            }
-                            .onTapGesture {
-                                isEdit = true
-                                withAnimation(.linear(duration: 0.25)) {
-                                    isEditWithAnimation = true
-                                }
-                            }
-                    }
-                }
-                .overlay(alignment: .topLeading) {
                     ForEach(selectedPostions) { pos in
-                        TaskView()
+                        TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask, 
+                                 config: $config,
+                                 translation: $translation,
+                                 isEdit: $isEdit)
                             .offset(x: CGFloat(pos.column) * AppConstant.rowWidth, y: CGFloat(pos.index) * AppConstant.rowHeight)
                     }
                 }

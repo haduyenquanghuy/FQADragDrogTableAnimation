@@ -10,10 +10,7 @@ import SwiftUI
 struct ScheduleView: View {
     
     @State private var offset = CGPoint.zero
-    
-    // This 2 variable need to sync
     @State private var isEdit = false
-    @State private var isEditWithAnimation = false
     
     @State private var blockScrollWhenDragTask = false
     @State private var config = TaskConfigModel()
@@ -22,9 +19,8 @@ struct ScheduleView: View {
     var body: some View {
         ScrollView([.vertical], showsIndicators: false) {
             ScrollView([.horizontal], showsIndicators: false) {
-                ScheduleTableContentView(offset: $offset, 
-                                         isEdit: $isEdit, 
-                                         isEditWithAnimation: $isEditWithAnimation,
+                ScheduleTableContentView(offset: $offset,
+                                         isEdit: $isEdit,
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                          config: $config,
                                          selectedPostions: $selectedPositions)
@@ -41,7 +37,7 @@ struct ScheduleView: View {
         }
         .scrollDisabled(blockScrollWhenDragTask)
         .overlay(alignment: .bottom, content: {
-            if isEditWithAnimation {
+            if isEdit {
                 
                 HStack(spacing: 12) {
                     
@@ -62,11 +58,11 @@ struct ScheduleView: View {
                         
                         //wait for shadow animation by delay 0.7s = 0.5(move task to last translation) + 0.2 (shadow animation)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: {
-                            isEdit = false
+                            config.isEdit = false
                         })
                         
                         withAnimation(.linear(duration: 0.4)) {
-                            isEditWithAnimation = false
+                            isEdit = false
                         }
                     }
                     
@@ -78,11 +74,11 @@ struct ScheduleView: View {
                         
                         // wait for shadow animation end by 0.2s delay
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                            isEdit = false
+                            config.isEdit = false
                         })
                         
                         withAnimation(.linear(duration: 0.3)) {
-                            isEditWithAnimation = false
+                            isEdit = false
                         }
                     }
                     
