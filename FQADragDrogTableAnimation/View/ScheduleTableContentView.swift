@@ -13,9 +13,7 @@ struct ScheduleTableContentView: View {
     @Binding var isEdit: Bool
     @Binding var isEditWithAnimation: Bool
     @Binding var blockScrollWhenDragTask: Bool
-    @Binding var shadowHeight: Double
-    @Binding var oldTranslation: CGSize
-    @Binding var lastTranslation: CGSize
+    @Binding var config: TaskConfigModel
     @Binding var selectedPostions: [SchedulePositionModel]
     
     @State private var translation = CGSize.zero
@@ -47,17 +45,17 @@ struct ScheduleTableContentView: View {
                         Color.blue
                             .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
                             .cornerRadius(8)
-                            .shadow(color: .black.opacity(0.25), radius: 4, x: -shadowHeight, y: shadowHeight)
-                            .offset(x: shadowHeight / 4 , y: -shadowHeight / 4)
+                            .shadow(color: .black.opacity(0.25), radius: 4, x: -config.shadowHeight, y: config.shadowHeight)
+                            .offset(x: config.shadowHeight / 4 , y: -config.shadowHeight / 4)
                             .onAppear {
-                                oldTranslation = lastTranslation
+                                config.oldTranslation = config.lastTranslation
                                 withAnimation(.smooth(duration: 0.25)) {
-                                    shadowHeight = 8
+                                    config.shadowHeight = 8
                                 }
                             }
                             .offset(
-                                x: lastTranslation.width + translation.width,
-                                y: lastTranslation.height + translation.height
+                                x: config.lastTranslation.width + translation.width,
+                                y: config.lastTranslation.height + translation.height
                             )
                             .gesture(
                                 dragGesture
@@ -71,11 +69,11 @@ struct ScheduleTableContentView: View {
                             .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
                             .cornerRadius(8)
                             .offset(
-                                x: lastTranslation.width + translation.width,
-                                y: lastTranslation.height + translation.height
+                                x: config.lastTranslation.width + translation.width,
+                                y: config.lastTranslation.height + translation.height
                             )
                             .onAppear {
-                                shadowHeight = 0
+                                config.shadowHeight = 0
                             }
                             .onTapGesture {
                                 isEdit = true
@@ -106,14 +104,14 @@ struct ScheduleTableContentView: View {
             .onEnded { value in
                 blockScrollWhenDragTask = false
                 
-                lastTranslation.width += value.translation.width
-                lastTranslation.height += value.translation.height
+                config.lastTranslation.width += value.translation.width
+                config.lastTranslation.height += value.translation.height
                 translation = .zero
                 
                 withAnimation(.smooth(duration: 0.25)) {
-                    let x = round((lastTranslation.width) / AppConstant.rowWidth)
-                    let y = round((lastTranslation.height) / AppConstant.rowHeight)
-                    lastTranslation = CGSize(width: x * AppConstant.rowWidth, height: y * AppConstant.rowHeight)
+                    let x = round((config.lastTranslation.width) / AppConstant.rowWidth)
+                    let y = round((config.lastTranslation.height) / AppConstant.rowHeight)
+                    config.lastTranslation = CGSize(width: x * AppConstant.rowWidth, height: y * AppConstant.rowHeight)
                 }
             }
     }

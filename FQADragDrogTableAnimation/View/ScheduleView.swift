@@ -26,9 +26,7 @@ struct ScheduleView: View {
                                          isEdit: $isEdit, 
                                          isEditWithAnimation: $isEditWithAnimation,
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask,
-                                         shadowHeight: $config.shadowHeight,
-                                         oldTranslation: $config.oldTranslation,
-                                         lastTranslation: $config.lastTranslation,
+                                         config: $config,
                                          selectedPostions: $selectedPositions)
                     .background( GeometryReader { geo in
                         Color.clear
@@ -111,11 +109,4 @@ struct ViewOffsetKey: PreferenceKey {
 
 #Preview {
     ScheduleView()
-}
-
-struct TaskConfigModel {
-    var shadowHeight: Double = 0
-    var oldTranslation = CGSize.zero
-    var lastTranslation = CGSize.zero
-    var isEdit = false
 }

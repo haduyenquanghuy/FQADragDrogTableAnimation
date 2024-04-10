@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */; };
 		364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */; };
 		364604D02BC3DC3B00A3E971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604CF2BC3DC3B00A3E971 /* Assets.xcassets */; };
 		364604D32BC3DC3B00A3E971 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604D22BC3DC3B00A3E971 /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigModel.swift; sourceTree = "<group>"; };
 		364604C82BC3DC3A00A3E971 /* FQADragDrogTableAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FQADragDrogTableAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FQADragDrogTableAnimationApp.swift; sourceTree = "<group>"; };
 		364604CF2BC3DC3B00A3E971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				364605242BC3E55E00A3E971 /* UserModel.swift */,
 				36D5D86A2BC4F05700524F07 /* SchedulePositionModel.swift */,
+				363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				364605232BC3E48B00A3E971 /* UserView.swift in Sources */,
 				364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */,
 				36D5D86D2BC4FA0F00524F07 /* TaskView.swift in Sources */,
+				363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */,
 				3646052D2BC3E7B900A3E971 /* Constants.swift in Sources */,
 				364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */,
 				364605302BC3E81B00A3E971 /* HourLabelItemView.swift in Sources */,
