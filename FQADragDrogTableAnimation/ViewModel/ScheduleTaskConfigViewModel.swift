@@ -49,6 +49,8 @@ class ScheduleTaskConfigViewModel: ObservableObject {
                 config[index].isEdit = false
             })
         }
+        
+        currentConfigTask = nil
     }
     
     func saveTranslation() {
@@ -62,9 +64,19 @@ class ScheduleTaskConfigViewModel: ObservableObject {
                 config[index].isEdit = false
             })
         }
+        currentConfigTask = nil
     }
     
     func setCurrent(config: TaskConfigModel) {
         self.currentConfigTask = config
+    }
+    
+    func roundPosition(size: CGSize) -> CGSize {
+        
+        // set min and max limit so task dont out of schedule
+        let rW = round((size.width) / AppConstant.rowWidth)
+        let rH = round((size.height) / AppConstant.rowHeight)
+        
+        return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.rowHeight)
     }
 }

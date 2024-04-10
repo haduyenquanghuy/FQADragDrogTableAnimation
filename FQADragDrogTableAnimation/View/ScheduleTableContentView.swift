@@ -34,7 +34,7 @@ struct ScheduleTableContentView: View {
                     .zIndex(1)
                 
                 LazyVStack(spacing: 0, content: {
-                    ForEach(0...23, id: \.self) {
+                    ForEach(0...AppConstant.hourPerDay, id: \.self) {
                         ScheduleRow(index: $0)
                     }
                 })
@@ -44,9 +44,7 @@ struct ScheduleTableContentView: View {
                         
                         TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                  config: conf,
-                                 isEdit: $isEdit, onEditTask: { config in
-                            vm.setCurrent(config: config)
-                        })
+                                 isEdit: $isEdit)
                         .offset(x: CGFloat(pos?.column ?? 0) * AppConstant.rowWidth, y: CGFloat(pos?.index ?? 0) * AppConstant.rowHeight)
                     }
                 }

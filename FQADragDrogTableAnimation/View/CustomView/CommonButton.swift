@@ -15,7 +15,6 @@ struct CommonButton: View {
     var strokeColor: Color
     var action: (() -> ())
     
-    
     var body: some View {
         Button(action: action, label: {
             Text(title.uppercased())
@@ -34,7 +33,5 @@ struct CommonButton: View {
 }
 
 #Preview {
-    CommonButton(title: "Huỷ Bỏ", backgroundColor: .black, foregroundColor: .white, strokeColor: .black, action: {
-        
-    })
+    CommonButton(title: "Huỷ Bỏ", backgroundColor: .black, foregroundColor: .white, strokeColor: .black, action: {})
 }

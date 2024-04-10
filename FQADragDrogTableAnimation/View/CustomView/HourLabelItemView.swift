@@ -25,7 +25,7 @@ struct HourLabelColumnView: View {
     
     var body: some View {
         VStack(spacing: 0, content: {
-            ForEach(0...23, id: \.self) { count in
+            ForEach(0...AppConstant.hourPerDay, id: \.self) { count in
                 HourLabelItemView(hour: String(count))
             }
         })

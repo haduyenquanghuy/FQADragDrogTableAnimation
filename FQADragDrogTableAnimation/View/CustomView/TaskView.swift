@@ -13,8 +13,7 @@ struct TaskView: View {
     @Binding var blockScrollWhenDragTask: Bool
     @Binding var config: TaskConfigModel
     @Binding var isEdit: Bool
-    
-    var onEditTask: (TaskConfigModel) -> ()
+    @EnvironmentObject private var vm: ScheduleTaskConfigViewModel
     
     var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0)
@@ -32,9 +31,7 @@ struct TaskView: View {
                 config.translation = .zero
                 
                 withAnimation(.smooth(duration: 0.25)) {
-                    let x = round((config.lastTranslation.width) / AppConstant.rowWidth)
-                    let y = round((config.lastTranslation.height) / AppConstant.rowHeight)
-                    config.lastTranslation = CGSize(width: x * AppConstant.rowWidth, height: y * AppConstant.rowHeight)
+                    config.lastTranslation = vm.roundPosition(size: config.lastTranslation)
                 }
             }
     }
@@ -78,10 +75,12 @@ struct TaskView: View {
                     }
                 }
                 .onTapGesture {
-                    config.isEdit = true
-                    onEditTask(config)
-                    withAnimation(.linear(duration: 0.25)) {
-                        isEdit = true
+                    if vm.currentConfigTask == nil {   
+                        config.isEdit = true
+                        vm.setCurrent(config: config)
+                        withAnimation(.linear(duration: 0.25)) {
+                            isEdit = true
+                        }
                     }
                 }
         }
