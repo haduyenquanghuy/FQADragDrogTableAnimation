@@ -46,6 +46,8 @@ struct ScheduleTableContentView: View {
                                  config: conf,
                                  isEdit: $isEdit)
                         .offset(x: CGFloat(pos?.column ?? 0) * AppConstant.rowWidth, y: CGFloat(pos?.index ?? 0) * AppConstant.rowHeight)
+                        // push task to the most when it selected
+                        .zIndex(conf.id == vm.currentConfigTask?.id ? 1 : -1)
                     }
                 }
             }

@@ -39,7 +39,7 @@ struct TaskView: View {
     var body: some View {
         
         if config.isEdit {
-            Color.blue
+            Color(uiColor: config.color)
                 .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
                 .cornerRadius(8)
                 .shadow(color: .black.opacity(0.25), radius: 4, x: -config.shadowHeight, y: config.shadowHeight)
@@ -47,7 +47,7 @@ struct TaskView: View {
                 .onAppear {
                     config.oldTranslation = config.lastTranslation
                     withAnimation(.smooth(duration: 0.25)) {
-                        config.shadowHeight = 8
+                        config.shadowHeight = 12
                     }
                 }
                 .offset(
@@ -60,7 +60,7 @@ struct TaskView: View {
                     blockScrollWhenDragTask = true
                 }
         } else {
-            Color.blue
+            Color(uiColor: config.color)
                 .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
                 .cornerRadius(8)
                 .scaleEffect(scale)

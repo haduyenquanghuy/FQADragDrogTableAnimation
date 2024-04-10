@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */; };
 		363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */; };
+		363E1B4B2BC68693002A85EB /* RandomColor in Frameworks */ = {isa = PBXBuildFile; productRef = 363E1B4A2BC68693002A85EB /* RandomColor */; };
 		364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */; };
 		364604D02BC3DC3B00A3E971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604CF2BC3DC3B00A3E971 /* Assets.xcassets */; };
 		364604D32BC3DC3B00A3E971 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604D22BC3DC3B00A3E971 /* Preview Assets.xcassets */; };
@@ -99,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363E1B4B2BC68693002A85EB /* RandomColor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +259,9 @@
 			dependencies = (
 			);
 			name = FQADragDrogTableAnimation;
+			packageProductDependencies = (
+				363E1B4A2BC68693002A85EB /* RandomColor */,
+			);
 			productName = FQADragDrogTableAnimation;
 			productReference = 364604C82BC3DC3A00A3E971 /* FQADragDrogTableAnimation.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +290,9 @@
 				Base,
 			);
 			mainGroup = 364604BF2BC3DC3A00A3E971;
+			packageReferences = (
+				363E1B492BC68693002A85EB /* XCRemoteSwiftPackageReference "RandomColorSwift" */,
+			);
 			productRefGroup = 364604C92BC3DC3A00A3E971 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -556,6 +564,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		363E1B492BC68693002A85EB /* XCRemoteSwiftPackageReference "RandomColorSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/RandomColorSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		363E1B4A2BC68693002A85EB /* RandomColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 363E1B492BC68693002A85EB /* XCRemoteSwiftPackageReference "RandomColorSwift" */;
+			productName = RandomColor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 364604C02BC3DC3A00A3E971 /* Project object */;
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RandomColor
 
 struct TaskConfigModel: Identifiable, Equatable {
     
@@ -16,4 +17,5 @@ struct TaskConfigModel: Identifiable, Equatable {
     var lastTranslation = CGSize.zero
     var translation = CGSize.zero
     var isEdit = false
+    var color = randomColor(hue: .blue, luminosity: .bright)
 }
