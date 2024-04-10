@@ -12,11 +12,8 @@ struct ScheduleTableContentView: View {
     @Binding var offset: CGPoint
     @Binding var isEdit: Bool
     @Binding var blockScrollWhenDragTask: Bool
-    @Binding var config: TaskConfigModel
-//    @Binding var selectedPostions: [SchedulePositionModel]
     
-    @EnvironmentObject var vm: ScheduleTaskConfigViewModel
-    
+    @EnvironmentObject private var vm: ScheduleTaskConfigViewModel
     @State private var translation = CGSize.zero
     
     var body: some View {
@@ -42,39 +39,18 @@ struct ScheduleTableContentView: View {
                     }
                 })
                 .overlay(alignment: .topLeading) {
-                    ForEach(vm.positions) { pos in
+                    ForEach($vm.config) { conf in
+                        
+                        let pos = vm.pos(at: conf.wrappedValue) ?? SchedulePositionModel(index: 0, row: 0, column: 0)
+                        
                         TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask,
-                                 config: $config,
-                                 translation: $translation,
+                                 config: conf,
                                  isEdit: $isEdit)
-                            .offset(x: CGFloat(pos.column) * AppConstant.rowWidth, y: CGFloat(pos.index) * AppConstant.rowHeight)
+                        .offset(x: CGFloat(pos.column) * AppConstant.rowWidth, y: CGFloat(pos.index) * AppConstant.rowHeight)
                     }
                 }
             }
         }
         .environmentObject(vm)
-    }
-    
-    var dragGesture: some Gesture {
-        DragGesture(minimumDistance: 0)
-            .onChanged { value in
-                // add this animation block to make drag animation smooth
-                withAnimation(.linear(duration: 0.05)) {
-                    translation = value.translation
-                }
-            }
-            .onEnded { value in
-                blockScrollWhenDragTask = false
-                
-                config.lastTranslation.width += value.translation.width
-                config.lastTranslation.height += value.translation.height
-                translation = .zero
-                
-                withAnimation(.smooth(duration: 0.25)) {
-                    let x = round((config.lastTranslation.width) / AppConstant.rowWidth)
-                    let y = round((config.lastTranslation.height) / AppConstant.rowHeight)
-                    config.lastTranslation = CGSize(width: x * AppConstant.rowWidth, height: y * AppConstant.rowHeight)
-                }
-            }
     }
 }

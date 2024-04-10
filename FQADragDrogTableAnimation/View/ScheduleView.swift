@@ -22,8 +22,7 @@ struct ScheduleView: View {
             ScrollView([.horizontal], showsIndicators: false) {
                 ScheduleTableContentView(offset: $offset,
                                          isEdit: $isEdit,
-                                         blockScrollWhenDragTask: $blockScrollWhenDragTask,
-                                         config: $config)
+                                         blockScrollWhenDragTask: $blockScrollWhenDragTask)
                     .background( GeometryReader { geo in
                         Color.clear
                             .preference(key: ViewOffsetKey.self, 

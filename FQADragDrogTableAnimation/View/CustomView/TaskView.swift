@@ -12,7 +12,6 @@ struct TaskView: View {
     @State private var scale: Double = 0
     @Binding var blockScrollWhenDragTask: Bool
     @Binding var config: TaskConfigModel
-    @Binding var translation: CGSize
     @Binding var isEdit: Bool
     
     var dragGesture: some Gesture {
@@ -20,7 +19,7 @@ struct TaskView: View {
             .onChanged { value in
                 // add this animation block to make drag animation smooth
                 withAnimation(.linear(duration: 0.05)) {
-                    translation = value.translation
+                    config.translation = value.translation
                 }
             }
             .onEnded { value in
@@ -28,7 +27,7 @@ struct TaskView: View {
                 
                 config.lastTranslation.width += value.translation.width
                 config.lastTranslation.height += value.translation.height
-                translation = .zero
+                config.translation = .zero
                 
                 withAnimation(.smooth(duration: 0.25)) {
                     let x = round((config.lastTranslation.width) / AppConstant.rowWidth)
@@ -53,8 +52,8 @@ struct TaskView: View {
                     }
                 }
                 .offset(
-                    x: config.lastTranslation.width + translation.width,
-                    y: config.lastTranslation.height + translation.height
+                    x: config.lastTranslation.width + config.translation.width,
+                    y: config.lastTranslation.height + config.translation.height
                 )
                 .gesture(dragGesture)
                 .onLongPressGesture(minimumDuration: 0.0) {
@@ -67,8 +66,8 @@ struct TaskView: View {
                 .cornerRadius(8)
                 .scaleEffect(scale)
                 .offset(
-                    x: config.lastTranslation.width + translation.width,
-                    y: config.lastTranslation.height + translation.height
+                    x: config.lastTranslation.width + config.translation.width,
+                    y: config.lastTranslation.height + config.translation.height
                 )
                 .onAppear {
                     config.shadowHeight = 0

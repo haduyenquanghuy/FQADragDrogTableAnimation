@@ -10,7 +10,7 @@ import SwiftUI
 class ScheduleTaskConfigViewModel: ObservableObject {
     
     @Published var positions: [SchedulePositionModel]
-    @Published var config: [TaskConfigModel]
+    @Published var config: [TaskConfigModel]    
     
     init() {
         self.positions = []
@@ -21,5 +21,13 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         positions.append(pos)
         let newConfig = TaskConfigModel()
         config.append(newConfig)
+    }
+    
+    func pos(at conf: TaskConfigModel) -> SchedulePositionModel? {
+        
+        if let index = config.firstIndex(where: { conf == $0 }) {
+            return positions[index]
+        }
+        return nil
     }
 }
