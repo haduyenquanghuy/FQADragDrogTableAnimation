@@ -14,6 +14,8 @@ struct TaskView: View {
     @Binding var config: TaskConfigModel
     @Binding var isEdit: Bool
     
+    var onEditTask: (TaskConfigModel) -> ()
+    
     var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0)
             .onChanged { value in
@@ -77,6 +79,7 @@ struct TaskView: View {
                 }
                 .onTapGesture {
                     config.isEdit = true
+                    onEditTask(config)
                     withAnimation(.linear(duration: 0.25)) {
                         isEdit = true
                     }

@@ -40,13 +40,14 @@ struct ScheduleTableContentView: View {
                 })
                 .overlay(alignment: .topLeading) {
                     ForEach($vm.config) { conf in
-                        
-                        let pos = vm.pos(at: conf.wrappedValue) ?? SchedulePositionModel(index: 0, row: 0, column: 0)
+                        let pos = vm.pos(at: conf.wrappedValue)
                         
                         TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                  config: conf,
-                                 isEdit: $isEdit)
-                        .offset(x: CGFloat(pos.column) * AppConstant.rowWidth, y: CGFloat(pos.index) * AppConstant.rowHeight)
+                                 isEdit: $isEdit, onEditTask: { config in
+                            vm.setCurrent(config: config)
+                        })
+                        .offset(x: CGFloat(pos?.column ?? 0) * AppConstant.rowWidth, y: CGFloat(pos?.index ?? 0) * AppConstant.rowHeight)
                     }
                 }
             }
