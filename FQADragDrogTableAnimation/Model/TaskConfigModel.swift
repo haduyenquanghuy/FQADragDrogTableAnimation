@@ -19,3 +19,12 @@ struct TaskConfigModel: Identifiable, Equatable {
     var isEdit = false
     var color = randomColor(hue: .blue, luminosity: .bright)
 }
+
+struct TaskModel: Identifiable {
+    
+    var id = UUID()
+    
+    var startTime: String
+    var endTime: String
+    var content: String
+}

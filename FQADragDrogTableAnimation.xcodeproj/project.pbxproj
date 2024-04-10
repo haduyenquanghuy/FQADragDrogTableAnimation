@@ -10,6 +10,7 @@
 		363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */; };
 		363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */; };
 		363E1B4B2BC68693002A85EB /* RandomColor in Frameworks */ = {isa = PBXBuildFile; productRef = 363E1B4A2BC68693002A85EB /* RandomColor */; };
+		363E1B4D2BC69580002A85EB /* TaskContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B4C2BC69580002A85EB /* TaskContentView.swift */; };
 		364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */; };
 		364604D02BC3DC3B00A3E971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604CF2BC3DC3B00A3E971 /* Assets.xcassets */; };
 		364604D32BC3DC3B00A3E971 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364604D22BC3DC3B00A3E971 /* Preview Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigModel.swift; sourceTree = "<group>"; };
 		363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTaskConfigViewModel.swift; sourceTree = "<group>"; };
+		363E1B4C2BC69580002A85EB /* TaskContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContentView.swift; sourceTree = "<group>"; };
 		364604C82BC3DC3A00A3E971 /* FQADragDrogTableAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FQADragDrogTableAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364604CB2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FQADragDrogTableAnimationApp.swift; sourceTree = "<group>"; };
 		364604CF2BC3DC3B00A3E971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				364605312BC3ED0200A3E971 /* ScheduleGridItemView.swift */,
 				364605352BC3F71500A3E971 /* CommonButton.swift */,
 				36D5D86C2BC4FA0F00524F07 /* TaskView.swift */,
+				363E1B4C2BC69580002A85EB /* TaskContentView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */,
 				364605302BC3E81B00A3E971 /* HourLabelItemView.swift in Sources */,
 				364605322BC3ED0200A3E971 /* ScheduleGridItemView.swift in Sources */,
+				363E1B4D2BC69580002A85EB /* TaskContentView.swift in Sources */,
 				364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */,
 				364605252BC3E55E00A3E971 /* UserModel.swift in Sources */,
 				364605362BC3F71500A3E971 /* CommonButton.swift in Sources */,

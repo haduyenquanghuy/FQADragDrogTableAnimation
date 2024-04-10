@@ -10,17 +10,20 @@ import SwiftUI
 class ScheduleTaskConfigViewModel: ObservableObject {
     
     @Published var positions: [SchedulePositionModel]
-    @Published var config: [TaskConfigModel]    
+    @Published var config: [TaskConfigModel]
+    var tasks: [TaskModel]
     var currentConfigTask: TaskConfigModel?
     
     init() {
         self.positions = []
         self.config = []
+        self.tasks = []
     }
     
     func create(new pos: SchedulePositionModel) {
         positions.append(pos)
         config.append(TaskConfigModel())
+        tasks.append(createTask(with: pos))
     }
     
     func pos(at conf: TaskConfigModel) -> SchedulePositionModel? {
@@ -31,9 +34,16 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         return nil
     }
     
+    func task(at conf: TaskConfigModel) -> TaskModel? {
+        
+        if let index = config.firstIndex(where: { conf == $0 }) {
+            return tasks[index]
+        }
+        return nil
+    }
+    
     func cancelTranslation() {
         if let index = config.firstIndex(where: { currentConfigTask?.id == $0.id }) {
-            
             // no change on translation
             if config[index].lastTranslation != config[index].oldTranslation {
                 withAnimation(.smooth(duration: 0.5)) {
@@ -68,6 +78,7 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         if let index = config.firstIndex(where: { currentConfigTask?.id == $0.id }) {
             withAnimation(.smooth(duration: 0.2)) {
                 config[index].shadowHeight = 0
+                updateTask(index: index)
             }
             
             // wait for shadow animation end by 0.2s delay
@@ -76,6 +87,19 @@ class ScheduleTaskConfigViewModel: ObservableObject {
             })
         }
         currentConfigTask = nil
+    }
+    
+    func updateTask(index: Int) {
+        let curConf = config[index]
+        
+        let offset = Int(round((curConf.lastTranslation.height) / AppConstant.rowHeight))
+        let newStartTime = positions[index].index + offset
+        
+        tasks[index] = TaskModel(startTime: "\(newStartTime)h00", endTime: "\(newStartTime+1)h00", content: tasks[index].content)
+    }
+    
+    func createTask(with pos: SchedulePositionModel) -> TaskModel {
+        TaskModel(startTime: "\(pos.index)h00", endTime: "\(pos.index+1)h00", content: "abcdef")
     }
     
     func setCurrent(config: TaskConfigModel) {

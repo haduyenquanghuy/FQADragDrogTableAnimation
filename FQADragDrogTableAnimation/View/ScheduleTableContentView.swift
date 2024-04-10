@@ -41,12 +41,13 @@ struct ScheduleTableContentView: View {
                 .overlay(alignment: .topLeading) {
                     ForEach($vm.config) { conf in
                         let pos = vm.pos(at: conf.wrappedValue)
+                        let task = vm.task(at: conf.wrappedValue)
                         
                         TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                  config: conf,
-                                 isEdit: $isEdit)
+                                 isEdit: $isEdit, task: task)
                         .offset(x: CGFloat(pos?.column ?? 0) * AppConstant.rowWidth, y: CGFloat(pos?.index ?? 0) * AppConstant.rowHeight)
-                        // push task to the most when it selected
+                        // push task to the most when it is selected
                         .zIndex(conf.isEdit.wrappedValue ? 1 : -1)
                     }
                 }

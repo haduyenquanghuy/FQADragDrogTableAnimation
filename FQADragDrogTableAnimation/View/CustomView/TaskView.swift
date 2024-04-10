@@ -15,6 +15,8 @@ struct TaskView: View {
     @Binding var isEdit: Bool
     @EnvironmentObject private var vm: ScheduleTaskConfigViewModel
     
+    var task: TaskModel?
+    
     var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0)
             .onChanged { value in
@@ -39,8 +41,9 @@ struct TaskView: View {
     var body: some View {
         
         if config.isEdit {
-            Color(uiColor: config.color)
+            TaskContentView(task: task)
                 .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
+                .background(Color(uiColor: config.color))
                 .cornerRadius(8)
                 .shadow(color: .black.opacity(0.25), radius: 4, x: -config.shadowHeight, y: config.shadowHeight)
                 .offset(x: config.shadowHeight / 4 , y: -config.shadowHeight / 4)
@@ -60,8 +63,9 @@ struct TaskView: View {
                     blockScrollWhenDragTask = true
                 }
         } else {
-            Color(uiColor: config.color)
+            TaskContentView(task: task)
                 .frame(width: AppConstant.rowWidth, height: AppConstant.rowHeight)
+                .background(Color(uiColor: config.color))
                 .cornerRadius(8)
                 .scaleEffect(scale)
                 .offset(
