@@ -33,21 +33,32 @@ class ScheduleTaskConfigViewModel: ObservableObject {
     
     func cancelTranslation() {
         if let index = config.firstIndex(where: { currentConfigTask?.id == $0.id }) {
-            withAnimation(.smooth(duration: 0.5)) {
-                config[index].lastTranslation = config[index].oldTranslation
-            }
             
-            // wait for move task to last translation end (0.5s)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [self] in
+            // no change on translation
+            if config[index].lastTranslation != config[index].oldTranslation {
+                withAnimation(.smooth(duration: 0.5)) {
+                    config[index].lastTranslation = config[index].oldTranslation
+                }
+                // wait for move task to last translation end (0.5s)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { [self] in
+                    withAnimation(.smooth(duration: 0.2)) {
+                        config[index].shadowHeight = 0
+                    }
+                })
+                
+                //wait for shadow animation by delay 0.7s = 0.5(move task to last translation) + 0.2 (shadow animation)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: { [self] in
+                    config[index].isEdit = false
+                })
+            } else {
                 withAnimation(.smooth(duration: 0.2)) {
                     config[index].shadowHeight = 0
                 }
-            })
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: { [self] in
+                    config[index].isEdit = false
+                })
+            }
             
-            //wait for shadow animation by delay 0.7s = 0.5(move task to last translation) + 0.2 (shadow animation)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: { [self] in
-                config[index].isEdit = false
-            })
         }
         
         currentConfigTask = nil
