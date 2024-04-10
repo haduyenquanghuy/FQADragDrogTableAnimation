@@ -16,11 +16,7 @@ struct ScheduleView: View {
     @State private var isEditWithAnimation = false
     
     @State private var blockScrollWhenDragTask = false
-    @State private var shadowHeight: Double = 0
-    
-    @State private var oldTranslation = CGSize.zero
-    @State private var lastTranslation = CGSize.zero
-    
+    @State private var config = TaskConfigModel()
     @State private var selectedPositions: [SchedulePositionModel] = []
     
     var body: some View {
@@ -30,9 +26,9 @@ struct ScheduleView: View {
                                          isEdit: $isEdit, 
                                          isEditWithAnimation: $isEditWithAnimation,
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask,
-                                         shadowHeight: $shadowHeight,
-                                         oldTranslation: $oldTranslation,
-                                         lastTranslation: $lastTranslation, 
+                                         shadowHeight: $config.shadowHeight,
+                                         oldTranslation: $config.oldTranslation,
+                                         lastTranslation: $config.lastTranslation,
                                          selectedPostions: $selectedPositions)
                     .background( GeometryReader { geo in
                         Color.clear
@@ -56,13 +52,13 @@ struct ScheduleView: View {
                     CommonButton(title: "Huỷ bỏ", backgroundColor: .white, foregroundColor: .black, strokeColor: .black) {
                         
                         withAnimation(.smooth(duration: 0.5)) {
-                            lastTranslation = oldTranslation
+                            config.lastTranslation = config.oldTranslation
                         }
                         
                         // wait for move task to last translation end (0.5s)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                             withAnimation(.smooth(duration: 0.2)) {
-                                shadowHeight = 0
+                                config.shadowHeight = 0
                             }
                         })
                         
@@ -79,7 +75,7 @@ struct ScheduleView: View {
                     
                     CommonButton(title: "Lưu", backgroundColor: .black, foregroundColor: .white, strokeColor: .black) {
                         withAnimation(.smooth(duration: 0.2)) {
-                            shadowHeight = 0
+                            config.shadowHeight = 0
                         }
                         
                         // wait for shadow animation end by 0.2s delay
@@ -115,4 +111,11 @@ struct ViewOffsetKey: PreferenceKey {
 
 #Preview {
     ScheduleView()
+}
+
+struct TaskConfigModel {
+    var shadowHeight: Double = 0
+    var oldTranslation = CGSize.zero
+    var lastTranslation = CGSize.zero
+    var isEdit = false
 }
