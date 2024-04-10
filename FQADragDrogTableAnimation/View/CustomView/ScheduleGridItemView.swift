@@ -46,7 +46,7 @@ struct ScheduleGridRow: View {
 struct ScheduleRow: View {
     
     var index: Int
-    @Binding var selectedPositions: [SchedulePositionModel]
+    @EnvironmentObject var vm: ScheduleTaskConfigViewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -56,7 +56,7 @@ struct ScheduleRow: View {
                     let newPosition = SchedulePositionModel(index: index, row: row, column: column)
                     
                     withAnimation(.linear(duration: 0.36)) {
-                        selectedPositions.append(newPosition)
+                        vm.create(new: newPosition)
                     }
                 })
             }
@@ -66,6 +66,6 @@ struct ScheduleRow: View {
 }
 
 #Preview {
-    ScheduleRow(index: 4, selectedPositions: .constant([]))
+    ScheduleRow(index: 4)
 }
 

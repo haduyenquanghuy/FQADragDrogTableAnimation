@@ -13,7 +13,9 @@ struct ScheduleTableContentView: View {
     @Binding var isEdit: Bool
     @Binding var blockScrollWhenDragTask: Bool
     @Binding var config: TaskConfigModel
-    @Binding var selectedPostions: [SchedulePositionModel]
+//    @Binding var selectedPostions: [SchedulePositionModel]
+    
+    @EnvironmentObject var vm: ScheduleTaskConfigViewModel
     
     @State private var translation = CGSize.zero
     
@@ -36,12 +38,12 @@ struct ScheduleTableContentView: View {
                 
                 LazyVStack(spacing: 0, content: {
                     ForEach(0...23, id: \.self) {
-                        ScheduleRow(index: $0, selectedPositions: $selectedPostions)
+                        ScheduleRow(index: $0)
                     }
                 })
                 .overlay(alignment: .topLeading) {
-                    ForEach(selectedPostions) { pos in
-                        TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask, 
+                    ForEach(vm.positions) { pos in
+                        TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                  config: $config,
                                  translation: $translation,
                                  isEdit: $isEdit)
@@ -50,6 +52,7 @@ struct ScheduleTableContentView: View {
                 }
             }
         }
+        .environmentObject(vm)
     }
     
     var dragGesture: some Gesture {

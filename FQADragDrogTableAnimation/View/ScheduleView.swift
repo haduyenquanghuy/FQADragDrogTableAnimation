@@ -14,7 +14,8 @@ struct ScheduleView: View {
     
     @State private var blockScrollWhenDragTask = false
     @State private var config = TaskConfigModel()
-    @State private var selectedPositions: [SchedulePositionModel] = []
+    
+    @StateObject private var vm: ScheduleTaskConfigViewModel = .init()
     
     var body: some View {
         ScrollView([.vertical], showsIndicators: false) {
@@ -22,8 +23,7 @@ struct ScheduleView: View {
                 ScheduleTableContentView(offset: $offset,
                                          isEdit: $isEdit,
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask,
-                                         config: $config,
-                                         selectedPostions: $selectedPositions)
+                                         config: $config)
                     .background( GeometryReader { geo in
                         Color.clear
                             .preference(key: ViewOffsetKey.self, 
@@ -91,6 +91,7 @@ struct ScheduleView: View {
             }
         })
         .coordinateSpace(name: "scroll")
+        .environmentObject(vm)
     }
 }
 
