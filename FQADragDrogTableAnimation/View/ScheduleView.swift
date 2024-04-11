@@ -21,14 +21,15 @@ struct ScheduleView: View {
                 ScheduleTableContentView(offset: $offset,
                                          isEdit: $isEdit,
                                          blockScrollWhenDragTask: $blockScrollWhenDragTask)
-                    .background( GeometryReader { geo in
-                        Color.clear
-                            .preference(key: ViewOffsetKey.self, 
-                                        value: geo.frame(in: .named("scroll")).origin)
-                    })
-                    .onPreferenceChange(ViewOffsetKey.self) { value in
-                        offset = value
-                    }
+                .background( GeometryReader { geo in
+                    Color.clear
+                        .preference(key: ViewOffsetKey.self,
+                                    value: geo.frame(in: .named("scroll")).origin)
+                })
+                .padding(.bottom, isEdit ? 56 : 0)
+                .onPreferenceChange(ViewOffsetKey.self) { value in
+                    offset = value
+                }
             }
             .scrollDisabled(blockScrollWhenDragTask)
         }
@@ -51,7 +52,7 @@ struct ScheduleView: View {
                     
                     
                     CommonButton(title: "Lưu", backgroundColor: .black, foregroundColor: .white, strokeColor: .black) {
-
+                        
                         vm.saveTranslation()
                         
                         withAnimation(.linear(duration: 0.3)) {
