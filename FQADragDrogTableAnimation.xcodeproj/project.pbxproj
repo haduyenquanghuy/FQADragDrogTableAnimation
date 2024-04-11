@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360086012BC793AE0022043E /* CurrentTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086002BC793AE0022043E /* CurrentTimeLabel.swift */; };
 		363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */; };
 		363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */; };
 		363E1B4B2BC68693002A85EB /* RandomColor in Frameworks */ = {isa = PBXBuildFile; productRef = 363E1B4A2BC68693002A85EB /* RandomColor */; };
@@ -35,7 +36,6 @@
 		3646051D2BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 364605092BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf */; };
 		3646051E2BC3DF1200A3E971 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3646050A2BC3DF1200A3E971 /* Lato-Hairline.ttf */; };
 		3646051F2BC3DF1200A3E971 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3646050B2BC3DF1200A3E971 /* README.txt */; };
-		364605212BC3E1DE00A3E971 /* SingletonObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605202BC3E1DE00A3E971 /* SingletonObj.swift */; };
 		364605232BC3E48B00A3E971 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605222BC3E48B00A3E971 /* UserView.swift */; };
 		364605252BC3E55E00A3E971 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605242BC3E55E00A3E971 /* UserModel.swift */; };
 		364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364605262BC3E73900A3E971 /* ScheduleView.swift */; };
@@ -52,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360086002BC793AE0022043E /* CurrentTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeLabel.swift; sourceTree = "<group>"; };
 		363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigModel.swift; sourceTree = "<group>"; };
 		363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTaskConfigViewModel.swift; sourceTree = "<group>"; };
 		363E1B4C2BC69580002A85EB /* TaskContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContentView.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		364605092BC3DF1200A3E971 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		3646050A2BC3DF1200A3E971 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		3646050B2BC3DF1200A3E971 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		364605202BC3E1DE00A3E971 /* SingletonObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonObj.swift; sourceTree = "<group>"; };
 		364605222BC3E48B00A3E971 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		364605242BC3E55E00A3E971 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		364605262BC3E73900A3E971 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 		364604F42BC3DCA400A3E971 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				364605202BC3E1DE00A3E971 /* SingletonObj.swift */,
 				364604F52BC3DCC400A3E971 /* FontProvider.swift */,
 				364605282BC3E76700A3E971 /* View+.swift */,
 				3646052A2BC3E77F00A3E971 /* Color+.swift */,
@@ -234,6 +233,7 @@
 				364605352BC3F71500A3E971 /* CommonButton.swift */,
 				36D5D86C2BC4FA0F00524F07 /* TaskView.swift */,
 				363E1B4C2BC69580002A85EB /* TaskContentView.swift */,
+				360086002BC793AE0022043E /* CurrentTimeLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -359,8 +359,8 @@
 				363E1B4D2BC69580002A85EB /* TaskContentView.swift in Sources */,
 				364604CC2BC3DC3A00A3E971 /* FQADragDrogTableAnimationApp.swift in Sources */,
 				364605252BC3E55E00A3E971 /* UserModel.swift in Sources */,
+				360086012BC793AE0022043E /* CurrentTimeLabel.swift in Sources */,
 				364605362BC3F71500A3E971 /* CommonButton.swift in Sources */,
-				364605212BC3E1DE00A3E971 /* SingletonObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

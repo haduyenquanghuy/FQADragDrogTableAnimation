@@ -20,3 +20,6 @@ struct FontProvider {
             .weight(fontWeight)
     }
 }
+
+let fontProvider = FontProvider.shared
+

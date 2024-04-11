@@ -20,14 +20,14 @@ struct ScheduleTableContentView: View {
         
         VStack(spacing: -2) {
             ListUserRowView()
-                .padding(.leading, 36)
+                .padding(.leading, AppConstant.hourLabelColumnWidth)
                 .background(Color.white)
                 .offset(y: max(0,-offset.y))
                 .zIndex(1)
             
             HStack(spacing: 0) {
                 HourLabelColumnView()
-                    .frame(width: 36)
+                    .frame(width: AppConstant.hourLabelColumnWidth)
                     .padding(.top, 12)
                     .background(Color.white)
                     .offset(x: max(0, -offset.x))

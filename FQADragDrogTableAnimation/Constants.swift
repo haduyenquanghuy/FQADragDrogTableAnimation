@@ -20,8 +20,9 @@ struct AppConstant {
     
     static let hourPerDay: Int = 23
     static let blockPerHour: Int = 4
-    static let rowWidth = (UIScreen.main.bounds.width - 36) / 3
+    static let rowWidth = (UIScreen.main.bounds.width - AppConstant.hourLabelColumnWidth) / 3
     static let rowHeight: CGFloat = rowGridHeight * CGFloat(blockPerHour)
     static let rowGridHeight: CGFloat = 30    
     static let timeUnitPerBlock: Double = Double(60) / Double(blockPerHour)
+    static let hourLabelColumnWidth: CGFloat = 44
 }
