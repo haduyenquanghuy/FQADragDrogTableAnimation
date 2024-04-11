@@ -70,6 +70,8 @@ struct ScheduleView: View {
         })
         .coordinateSpace(name: "scroll")
         .environmentObject(vm)
+        .ignoresSafeArea(edges: .top)
+        .padding(.top, 1)
     }
 }
 
