@@ -20,6 +20,7 @@ struct UserView: View {
             
             Text(user.name)
                 .font(fontProvider.latoFont(size: 14, fontWeight: .regular))
+                .foregroundStyle(.black)
         }
         .frame(maxWidth: .infinity)
     }

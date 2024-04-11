@@ -52,6 +52,13 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         config.firstIndex { conf == $0 }
     }
     
+    func postionX(at pos: SchedulePositionModel?, conf: TaskConfigModel?) -> CGFloat {
+        guard let pos = pos, let conf = conf else { return 0 }
+        
+        let offset = conf.lastTranslation.height / AppConstant.rowHeight
+        return offset + CGFloat(pos.index)
+    }
+    
     func create(new pos: SchedulePositionModel) {
         positions.append(pos)
         config.append(TaskConfigModel())

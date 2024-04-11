@@ -15,6 +15,7 @@ struct HourLabelItemView: View {
         
         Text("\(hour):00")
             .font(fontProvider.latoFont(size: 14, fontWeight: .bold))
+            .foregroundStyle(.black)
             .bold()
             .fixedSize(horizontal: true, vertical: true)
             .frame(height: AppConstant.rowGridHeight * CGFloat(AppConstant.blockPerHour), alignment: .top)
