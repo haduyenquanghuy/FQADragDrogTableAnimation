@@ -89,29 +89,42 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         currentConfigTask = nil
     }
     
-    func updateTask(index: Int) {
-        let curConf = config[index]
-        
-        let offset = Int(round((curConf.lastTranslation.height) / AppConstant.rowHeight))
-        let newStartTime = positions[index].index + offset
-        
-        tasks[index] = TaskModel(startTime: "\(newStartTime)h00", endTime: "\(newStartTime+1)h00", content: tasks[index].content)
-    }
-    
-    func createTask(with pos: SchedulePositionModel) -> TaskModel {
-        TaskModel(startTime: "\(pos.index)h00", endTime: "\(pos.index+1)h00", content: "abcdef")
-    }
-    
     func setCurrent(config: TaskConfigModel) {
         self.currentConfigTask = config
     }
     
     func roundPosition(size: CGSize) -> CGSize {
-        
         // set min and max limit so task dont out of schedule
         let rW = round((size.width) / AppConstant.rowWidth)
-        let rH = round((size.height) / AppConstant.rowHeight)
+        let rH = round((size.height) / AppConstant.rowGridHeight)
         
-        return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.rowHeight)
+        return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.rowGridHeight)
+    }
+    
+    private func updateTask(index: Int) {
+        let curConf = config[index]
+        
+        let offset = CGFloat(curConf.lastTranslation.height) / AppConstant.rowHeight
+        let startTime = CGFloat(positions[index].index) + offset
+        let endTime = startTime + 1
+        
+        tasks[index] = TaskModel(
+            startTime: convertToDateString(with: startTime),
+            endTime: convertToDateString(with: endTime),
+            content: tasks[index].content)
+    }
+    
+    private func createTask(with pos: SchedulePositionModel) -> TaskModel {
+        TaskModel(startTime: convertToDateString(with: CGFloat(pos.index)),
+                  endTime: convertToDateString(with: CGFloat(pos.index + 1)),
+                  content: "abcdef")
+    }
+    
+    private func convertToDateString(with index: CGFloat) -> String {
+        
+        let hours = floor(index)
+        let minutes = index.truncatingRemainder(dividingBy: 1) * 60
+        
+        return String(format: "%01dh%02dp", Int(hours), Int(minutes))
     }
 }

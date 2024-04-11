@@ -23,4 +23,5 @@ struct AppConstant {
     static let rowWidth = (UIScreen.main.bounds.width - 36) / 3
     static let rowHeight: CGFloat = rowGridHeight * CGFloat(blockPerHour)
     static let rowGridHeight: CGFloat = 30    
+    static let timeUnitPerBlock: Double = Double(60) / Double(blockPerHour)
 }
