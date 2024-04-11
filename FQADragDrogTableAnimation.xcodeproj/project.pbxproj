@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		360086012BC793AE0022043E /* CurrentTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086002BC793AE0022043E /* CurrentTimeLabel.swift */; };
+		360086052BC7B97D0022043E /* ScheduleLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086042BC7B97D0022043E /* ScheduleLabelViewModel.swift */; };
+		360086072BC7C0E90022043E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086062BC7C0E90022043E /* Line.swift */; };
 		363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */; };
 		363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */; };
 		363E1B4B2BC68693002A85EB /* RandomColor in Frameworks */ = {isa = PBXBuildFile; productRef = 363E1B4A2BC68693002A85EB /* RandomColor */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		360086002BC793AE0022043E /* CurrentTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeLabel.swift; sourceTree = "<group>"; };
+		360086042BC7B97D0022043E /* ScheduleLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLabelViewModel.swift; sourceTree = "<group>"; };
+		360086062BC7C0E90022043E /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigModel.swift; sourceTree = "<group>"; };
 		363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTaskConfigViewModel.swift; sourceTree = "<group>"; };
 		363E1B4C2BC69580002A85EB /* TaskContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContentView.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */,
+				360086042BC7B97D0022043E /* ScheduleLabelViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				36D5D86C2BC4FA0F00524F07 /* TaskView.swift */,
 				363E1B4C2BC69580002A85EB /* TaskContentView.swift */,
 				360086002BC793AE0022043E /* CurrentTimeLabel.swift */,
+				360086062BC7C0E90022043E /* Line.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -350,9 +356,11 @@
 				364605232BC3E48B00A3E971 /* UserView.swift in Sources */,
 				364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */,
 				36D5D86D2BC4FA0F00524F07 /* TaskView.swift in Sources */,
+				360086052BC7B97D0022043E /* ScheduleLabelViewModel.swift in Sources */,
 				363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */,
 				363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */,
 				3646052D2BC3E7B900A3E971 /* Constants.swift in Sources */,
+				360086072BC7C0E90022043E /* Line.swift in Sources */,
 				364605272BC3E73900A3E971 /* ScheduleView.swift in Sources */,
 				364605302BC3E81B00A3E971 /* HourLabelItemView.swift in Sources */,
 				364605322BC3ED0200A3E971 /* ScheduleGridItemView.swift in Sources */,

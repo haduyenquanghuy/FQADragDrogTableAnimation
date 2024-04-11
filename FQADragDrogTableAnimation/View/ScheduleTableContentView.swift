@@ -13,7 +13,8 @@ struct ScheduleTableContentView: View {
     @Binding var isEdit: Bool
     @Binding var blockScrollWhenDragTask: Bool
     
-    @EnvironmentObject private var vm: ScheduleTaskConfigViewModel
+    @EnvironmentObject private var scheduleVM: ScheduleTaskConfigViewModel
+    @StateObject private var labelVM = ScheduleLabelViewModel()
     @State private var translation = CGSize.zero
     
     var body: some View {
@@ -38,10 +39,18 @@ struct ScheduleTableContentView: View {
                         ScheduleRow(index: $0)
                     }
                 })
+                .overlay(alignment: .topLeading, content: {
+                    Line()
+                        .stroke(style: StrokeStyle(dash: [8]))
+                        .stroke(Color.red, lineWidth: 1)
+                        .frame(height: 1)
+                        .padding(.top, 16)
+                        .offset(y: labelVM.heightOffset)
+                })
                 .overlay(alignment: .topLeading) {
-                    ForEach($vm.config) { conf in
-                        let pos = vm.pos(at: conf.wrappedValue)
-                        let task = vm.task(at: conf.wrappedValue)
+                    ForEach($scheduleVM.config) { conf in
+                        let pos = scheduleVM.pos(at: conf.wrappedValue)
+                        let task = scheduleVM.task(at: conf.wrappedValue)
                         
                         TaskView(blockScrollWhenDragTask: $blockScrollWhenDragTask,
                                  config: conf,
@@ -53,6 +62,7 @@ struct ScheduleTableContentView: View {
                 }
             }
         }
-        .environmentObject(vm)
+        .environmentObject(scheduleVM)
+        .environmentObject(labelVM)
     }
 }

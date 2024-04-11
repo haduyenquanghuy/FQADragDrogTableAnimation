@@ -13,7 +13,7 @@ struct ScheduleView: View {
     @State private var isEdit = false
     @State private var blockScrollWhenDragTask = false
     
-    @StateObject private var vm: ScheduleTaskConfigViewModel = .init()
+    @StateObject private var vm = ScheduleTaskConfigViewModel()
     
     var body: some View {
         ScrollView([.vertical], showsIndicators: false) {

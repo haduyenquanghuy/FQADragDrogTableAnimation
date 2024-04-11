@@ -20,6 +20,38 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         self.tasks = []
     }
     
+    private func updateTask(index: Int) {
+        let curConf = config[index]
+        
+        let offset = CGFloat(curConf.lastTranslation.height) / AppConstant.rowHeight
+        let startTime = CGFloat(positions[index].index) + offset
+        let endTime = startTime + 1
+        
+        tasks[index] = TaskModel(
+            startTime: convertToDateString(with: startTime),
+            endTime: convertToDateString(with: endTime),
+            content: tasks[index].content)
+    }
+    
+    private func createTask(with pos: SchedulePositionModel) -> TaskModel {
+        TaskModel(startTime: convertToDateString(with: CGFloat(pos.index)),
+                  endTime: convertToDateString(with: CGFloat(pos.index + 1)),
+                  content: "abcdef")
+    }
+    
+    private func convertToDateString(with index: CGFloat) -> String {
+        
+        let hours = floor(index)
+        let minutes = index.truncatingRemainder(dividingBy: 1) * 60
+        
+        return String(format: "%01dh%02dp", Int(hours), Int(minutes))
+    }
+    
+    private func index(at conf: TaskConfigModel) -> Int? {
+        
+        config.firstIndex { conf == $0 }
+    }
+    
     func create(new pos: SchedulePositionModel) {
         positions.append(pos)
         config.append(TaskConfigModel())
@@ -28,18 +60,13 @@ class ScheduleTaskConfigViewModel: ObservableObject {
     
     func pos(at conf: TaskConfigModel) -> SchedulePositionModel? {
         
-        if let index = config.firstIndex(where: { conf == $0 }) {
-            return positions[index]
-        }
-        return nil
+        index(at: conf).map { positions[$0] }
     }
+
     
     func task(at conf: TaskConfigModel) -> TaskModel? {
         
-        if let index = config.firstIndex(where: { conf == $0 }) {
-            return tasks[index]
-        }
-        return nil
+        index(at: conf).map { tasks[$0] }
     }
     
     func cancelTranslation() {
@@ -99,32 +126,5 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         let rH = round((size.height) / AppConstant.rowGridHeight)
         
         return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.rowGridHeight)
-    }
-    
-    private func updateTask(index: Int) {
-        let curConf = config[index]
-        
-        let offset = CGFloat(curConf.lastTranslation.height) / AppConstant.rowHeight
-        let startTime = CGFloat(positions[index].index) + offset
-        let endTime = startTime + 1
-        
-        tasks[index] = TaskModel(
-            startTime: convertToDateString(with: startTime),
-            endTime: convertToDateString(with: endTime),
-            content: tasks[index].content)
-    }
-    
-    private func createTask(with pos: SchedulePositionModel) -> TaskModel {
-        TaskModel(startTime: convertToDateString(with: CGFloat(pos.index)),
-                  endTime: convertToDateString(with: CGFloat(pos.index + 1)),
-                  content: "abcdef")
-    }
-    
-    private func convertToDateString(with index: CGFloat) -> String {
-        
-        let hours = floor(index)
-        let minutes = index.truncatingRemainder(dividingBy: 1) * 60
-        
-        return String(format: "%01dh%02dp", Int(hours), Int(minutes))
     }
 }

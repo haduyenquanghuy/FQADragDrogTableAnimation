@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HourLabelItemView: View {
+    
     var hour: String
     
     var body: some View {
@@ -23,12 +24,18 @@ struct HourLabelItemView: View {
 
 struct HourLabelColumnView: View {
     
+    @EnvironmentObject private var vm: ScheduleLabelViewModel
+    
     var body: some View {
         VStack(spacing: 0, content: {
             ForEach(0...AppConstant.hourPerDay, id: \.self) { count in
                 HourLabelItemView(hour: String(count))
             }
         })
+        .overlay(alignment: .top) {
+            CurrentTimeLabel(currentTime: $vm.timeStr)
+                .offset(y: vm.heightOffset)
+        }
     }
 }
 

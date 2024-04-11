@@ -9,20 +9,15 @@ import SwiftUI
 
 struct CurrentTimeLabel: View {
     
-    let dateFormatter: DateFormatter = {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm"
-        
-        return dateFormatter
-    }()
+    @Binding var currentTime: String
     
     var body: some View {
-        Text(dateFormatter.string(from: Date.now))
+        Text(currentTime)
             .font(fontProvider.latoFont(size: 12, fontWeight: .bold))
             .foregroundStyle(.red)
             .fixedSize()
             .frame(width: AppConstant.hourLabelColumnWidth, height: 20)
+            .background(Color.white)
             .overlay {
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(Color.red, lineWidth: 1)
@@ -31,5 +26,5 @@ struct CurrentTimeLabel: View {
 }
 
 #Preview {
-    CurrentTimeLabel()
+    CurrentTimeLabel(currentTime: .constant("abc"))
 }
