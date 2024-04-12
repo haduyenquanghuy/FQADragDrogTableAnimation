@@ -134,4 +134,8 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         
         return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.rowGridHeight)
     }
+    
+    func isOfficeHour(at index: Int, and row: Int) -> Bool {
+        AppConstant.officeHour ~= CGFloat(index) + CGFloat(row) / CGFloat(AppConstant.blockPerHour)
+    }
 }

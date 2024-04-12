@@ -25,4 +25,5 @@ struct AppConstant {
     static let rowGridHeight: CGFloat = 30    
     static let timeUnitPerBlock: Double = Double(60) / Double(blockPerHour)
     static let hourLabelColumnWidth: CGFloat = 44
+    static let officeHour = 8.5 ..< 17.5
 }
