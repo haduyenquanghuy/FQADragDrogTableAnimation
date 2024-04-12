@@ -14,6 +14,7 @@ struct ScheduleView: View {
     @State private var blockScrollWhenDragTask = false
     
     @StateObject private var vm = ScheduleTaskConfigViewModel()
+    @StateObject private var userVM = UserViewModel()
     
     var body: some View {
         ScrollView([.vertical], showsIndicators: false) {
@@ -77,7 +78,7 @@ struct ScheduleView: View {
                     })
                     
                     IconButton(backgroundColor: .black, iconName: "ic_plus", onTap: {
-                        
+                        userVM.createUser()
                     })
                 }
                 .padding([.trailing, .bottom])
@@ -88,6 +89,7 @@ struct ScheduleView: View {
         })
         .coordinateSpace(name: "scroll")
         .environmentObject(vm)
+        .environmentObject(userVM)
         .ignoresSafeArea(edges: .vertical)
         .padding(.vertical, 1)
     }

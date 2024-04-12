@@ -14,17 +14,19 @@ struct ScheduleTableContentView: View {
     @Binding var blockScrollWhenDragTask: Bool
     
     @EnvironmentObject private var scheduleVM: ScheduleTaskConfigViewModel
+    @EnvironmentObject private var userVM: UserViewModel
     @StateObject private var labelVM = ScheduleLabelViewModel()
     @State private var translation = CGSize.zero
     
     var body: some View {
         
         VStack(spacing: -2) {
-            ListUserRowView()
+            ListUserRowView(users: $userVM.listUsers)
                 .padding(.leading, AppConstant.hourLabelColumnWidth)
                 .background(Color.white)
                 .offset(y: max(0,-offset.y))
                 .zIndex(1)
+                .environmentObject(userVM)
             
             HStack(spacing: 0) {
                 HourLabelColumnView()
@@ -36,7 +38,7 @@ struct ScheduleTableContentView: View {
                 
                 LazyVStack(spacing: 0, content: {
                     ForEach(0...AppConstant.hourPerDay, id: \.self) {
-                        ScheduleRow(index: $0)
+                        ScheduleRow(index: $0, numberOfRow: userVM.listUsers.count)
                     }
                 })
                 .overlay(alignment: .topLeading, content: {

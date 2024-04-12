@@ -21,9 +21,7 @@ struct TaskView: View {
         DragGesture(minimumDistance: 0)
             .onChanged { value in
                 // add this animation block to make drag animation smooth
-                withAnimation(.linear(duration: 0.05)) {
-                    config.translation = value.translation
-                }
+                config.translation = value.translation
             }
             .onEnded { value in
                 blockScrollWhenDragTask = false

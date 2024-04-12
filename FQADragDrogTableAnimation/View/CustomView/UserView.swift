@@ -27,9 +27,12 @@ struct UserView: View {
 }
 
 struct ListUserRowView: View {
+    
+    @Binding var users: [UserModel]
+    
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(mockListUsers) {
+            ForEach(users) {
                 UserView(user: $0)
                     .frame(width: AppConstant.rowWidth)
             }
@@ -38,5 +41,5 @@ struct ListUserRowView: View {
 }
 
 #Preview {
-    ListUserRowView()
+    ListUserRowView(users: .constant(mockListUsers))
 }

@@ -30,10 +30,11 @@ struct ScheduleGridRow: View {
     
     var row: Int
     var onSelected: (_ row: Int,_ column: Int) -> Void
+    var numberOfRow: Int
     
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(0 ..< mockListUsers.count, id: \.self) {
+            ForEach(0 ..< numberOfRow, id: \.self) {
                 ScheduleGridItemView(column: $0, onSelectedCol: { column in
                     onSelected(row, column)
                 })
@@ -46,6 +47,7 @@ struct ScheduleGridRow: View {
 struct ScheduleRow: View {
     
     var index: Int
+    var numberOfRow: Int
     @EnvironmentObject var vm: ScheduleTaskConfigViewModel
     
     var body: some View {
@@ -58,7 +60,7 @@ struct ScheduleRow: View {
                     withAnimation(.linear(duration: 0.36)) {
                         vm.create(new: newPosition)
                     }
-                })
+                }, numberOfRow: numberOfRow)
             }
         }
         .border(Color(hex: "B1B1B1"), width: 1)
@@ -66,6 +68,6 @@ struct ScheduleRow: View {
 }
 
 #Preview {
-    ScheduleRow(index: 4)
+    ScheduleRow(index: 4, numberOfRow: 4)
 }
 
