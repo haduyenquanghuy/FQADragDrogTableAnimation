@@ -44,7 +44,7 @@ class ScheduleTaskConfigViewModel: ObservableObject {
         let hours = floor(index)
         let minutes = index.truncatingRemainder(dividingBy: 1) * 60
         
-        return String(format: "%01dh%02dp", Int(hours), Int(minutes))
+        return String(format: "%01dh%02dp", Int(hours), Int(minutes.rounded()))
     }
     
     private func index(at conf: TaskConfigModel) -> Int? {
@@ -130,9 +130,9 @@ class ScheduleTaskConfigViewModel: ObservableObject {
     func roundPosition(size: CGSize) -> CGSize {
         // set min and max limit so task dont out of schedule
         let rW = round((size.width) / AppConstant.rowWidth)
-        let rH = round((size.height) / AppConstant.rowGridHeight)
+        let rH = round((size.height) / AppConstant.heightPerChild)
         
-        return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.rowGridHeight)
+        return CGSize(width: rW * AppConstant.rowWidth, height: rH * AppConstant.heightPerChild)
     }
     
     func isOfficeHour(at index: Int, and row: Int) -> Bool {
