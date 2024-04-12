@@ -47,7 +47,7 @@ struct ScheduleGridRow: View {
             }
         }
         .border(width: 1, edges: [.leading, .trailing], color:  Color(hex: borderColor))
-        .border(width: isLast ? 2 : 1, edges: [.bottom, .trailing], color: Color(hex:borderColor))
+        .border(width: isLast ? 2 : 1, edges: [.bottom], color: Color(hex:borderColor))
     }
 
 }
