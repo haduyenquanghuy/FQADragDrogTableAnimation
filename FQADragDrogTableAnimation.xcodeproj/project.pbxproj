@@ -10,6 +10,7 @@
 		360086012BC793AE0022043E /* CurrentTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086002BC793AE0022043E /* CurrentTimeLabel.swift */; };
 		360086052BC7B97D0022043E /* ScheduleLabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086042BC7B97D0022043E /* ScheduleLabelViewModel.swift */; };
 		360086072BC7C0E90022043E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360086062BC7C0E90022043E /* Line.swift */; };
+		361E33362BC8DF4600286565 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361E33352BC8DF4600286565 /* IconButton.swift */; };
 		363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */; };
 		363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */; };
 		363E1B4B2BC68693002A85EB /* RandomColor in Frameworks */ = {isa = PBXBuildFile; productRef = 363E1B4A2BC68693002A85EB /* RandomColor */; };
@@ -57,6 +58,7 @@
 		360086002BC793AE0022043E /* CurrentTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeLabel.swift; sourceTree = "<group>"; };
 		360086042BC7B97D0022043E /* ScheduleLabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLabelViewModel.swift; sourceTree = "<group>"; };
 		360086062BC7C0E90022043E /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		361E33352BC8DF4600286565 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		363E1B452BC62FC6002A85EB /* TaskConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskConfigModel.swift; sourceTree = "<group>"; };
 		363E1B472BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTaskConfigViewModel.swift; sourceTree = "<group>"; };
 		363E1B4C2BC69580002A85EB /* TaskContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContentView.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				363E1B4C2BC69580002A85EB /* TaskContentView.swift */,
 				360086002BC793AE0022043E /* CurrentTimeLabel.swift */,
 				360086062BC7C0E90022043E /* Line.swift */,
+				361E33352BC8DF4600286565 /* IconButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				364605232BC3E48B00A3E971 /* UserView.swift in Sources */,
 				364605342BC3EE2000A3E971 /* ScheduleTableContentView.swift in Sources */,
 				36D5D86D2BC4FA0F00524F07 /* TaskView.swift in Sources */,
+				361E33362BC8DF4600286565 /* IconButton.swift in Sources */,
 				360086052BC7B97D0022043E /* ScheduleLabelViewModel.swift in Sources */,
 				363E1B482BC639DC002A85EB /* ScheduleTaskConfigViewModel.swift in Sources */,
 				363E1B462BC62FC6002A85EB /* TaskConfigModel.swift in Sources */,
@@ -511,6 +515,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +546,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -68,10 +68,28 @@ struct ScheduleView: View {
                 EmptyView()
             }
         })
+        .overlay(alignment: .bottomTrailing, content: {
+            
+            if !isEdit {
+                VStack(spacing: 12) {
+                    IconButton(backgroundColor: .white, iconName: "ic_gps", onTap: {
+                        
+                    })
+                    
+                    IconButton(backgroundColor: .black, iconName: "ic_plus", onTap: {
+                        
+                    })
+                }
+                .padding([.trailing, .bottom])
+                .transition(.move(edge: .trailing))
+            } else {
+                EmptyView()
+            }
+        })
         .coordinateSpace(name: "scroll")
         .environmentObject(vm)
-        .ignoresSafeArea(edges: .top)
-        .padding(.top, 1)
+        .ignoresSafeArea(edges: .vertical)
+        .padding(.vertical, 1)
     }
 }
 

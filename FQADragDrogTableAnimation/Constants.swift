@@ -10,10 +10,10 @@ import UIKit
 
 let mockListUsers = [
 
-    UserModel(id: "1", name: "Anna", imageName: "person1"),
-    UserModel(id: "2", name: "John Doe", imageName: "person2"),
-    UserModel(id: "3", name: "David", imageName: "person3"),
-    UserModel(id: "4", name: "Rose", imageName: "person4"),
+    UserModel(name: "Anna", imageName: "person1"),
+    UserModel(name: "John Doe", imageName: "person2"),
+    UserModel(name: "David", imageName: "person3"),
+    UserModel(name: "Rose", imageName: "person4"),
 ]
 
 struct AppConstant {

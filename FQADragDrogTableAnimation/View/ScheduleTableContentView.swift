@@ -44,7 +44,6 @@ struct ScheduleTableContentView: View {
                         .stroke(style: StrokeStyle(dash: [8]))
                         .stroke(Color.red, lineWidth: 1)
                         .frame(height: 1)
-                        .padding(.top, 16)
                         .offset(y: labelVM.heightOffset)
                 })
                 .overlay(alignment: .topLeading) {

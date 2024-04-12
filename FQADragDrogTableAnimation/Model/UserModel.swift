@@ -9,7 +9,7 @@ import Foundation
 
 struct UserModel: Identifiable {
     
-    var id: String
+    var id = UUID()
     var name: String
     var imageName: String
 }

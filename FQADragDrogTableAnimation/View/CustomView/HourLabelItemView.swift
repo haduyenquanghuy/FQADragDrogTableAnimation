@@ -36,6 +36,7 @@ struct HourLabelColumnView: View {
         .overlay(alignment: .top) {
             CurrentTimeLabel(currentTime: $vm.timeStr)
                 .offset(y: vm.heightOffset)
+                .padding(.top, -AppConstant.rowGridHeight / 2)
         }
     }
 }
